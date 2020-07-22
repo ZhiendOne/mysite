@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" src="/frontend/web/environment.js" charset="utf-8"></script>
+
+    <!-- sentry/browser -->
+    <script src="/frontend/public/vendor/sentry/5.19.0/bundle.min.js"></script>
+    <script>
+      try {
+        Sentry.init({ dsn: window.ENV.SENTRY_DSN_FRONT });
+      } catch (e) {
+        console.error(e, 'sentry/browser was not initialized');
+      }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      function runGTM(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      }
+
+      try {
+        runGTM(window, document, 'script', 'dataLayer', window.ENV.GTM_TOKEN);
+      } catch (e) {
+        Sentry.captureException(e);
+      }
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta name="yandex-verification" content="b424353ea6cf682b" />
+    <meta name="viewport" content="width=960, maximum-scale=3.0, minimum-scale=0">
+    <link rel="stylesheet" href="/frontend/public/fonts.css" />
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-K34QT3G"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="main"></div>
+    <script async type="text/javascript" src="/assets/chat2desk_test.js" charset="utf-8"></script>
+    <script async type="text/javascript" src="/prolongate/" charset="utf-8"></script>
+  <script type="text/javascript" src="/frontend/web/main-bundle-c60b13b6.js"></script></body>
+</html>
